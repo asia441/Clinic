@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@Entity
+//@Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
 @NoArgsConstructor
 public abstract class User {
 
