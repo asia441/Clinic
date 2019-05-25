@@ -26,31 +26,8 @@ public class Patient extends User{
 
     @OneToOne
     private Address address;
-//    @OneToMany
-//    private List<Visit> visitsList = new ArrayList<>();
+    @OneToMany(mappedBy = "patient")
+    private List<Visit> visitsList = new ArrayList<>();
 
 
-    @Override
-    public void logIn() {
-        super.logIn();
-    }
-
-    @Override
-    public void logOut() {
-        super.logOut();
-    }
-
-    @Override
-    public List<Doctor> ShowAllDoctors() {
-        return super.ShowAllDoctors();
-    }
-
-    @Override
-    public void showDoctorSchedule() {
-        super.showDoctorSchedule();
-    }
-
-    public void SignIn() {}
-
-    public void setOwnVisit() {}
 }

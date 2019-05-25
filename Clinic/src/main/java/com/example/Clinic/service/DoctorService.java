@@ -12,14 +12,17 @@ public class DoctorService {
     @Autowired
     private DoctorRepository doctorRepository;
 
-    public Doctor save(Doctor doctor){
+    public Doctor saveDoctor(Doctor doctor){
         return doctorRepository.save(doctor);
     }
-    public Iterable<Doctor> findAll() {
+    public Iterable<Doctor> findAllDoctors() {
         return doctorRepository.findAll();
     }
-
-    public Optional<Doctor> findById(Long patientId) {
-        return  doctorRepository.findById(patientId);
+    public Optional<Doctor> findDoctorById(Long doctorId) {
+        return  doctorRepository.findById(doctorId);
     }
+
+
+
+
 }
