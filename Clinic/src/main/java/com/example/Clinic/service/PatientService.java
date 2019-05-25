@@ -14,14 +14,14 @@ public class PatientService {
     @Autowired
     private PatientRepository patientRepository;
 
-    public Patient save(Patient patient){
+    public Patient savePatient(Patient patient){
         return patientRepository.save(patient);
     }
-    public Iterable<Patient> findAll() {
+    public Iterable<Patient> findAllPatients() {
         return patientRepository.findAll();
     }
 
-    public Optional<Patient> findById(Long patientId) {
+    public Optional<Patient> findPatientById(Long patientId) {
         return  patientRepository.findById(patientId);
     }
 

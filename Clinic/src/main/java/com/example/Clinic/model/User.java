@@ -23,14 +23,6 @@ public abstract class User {
     private String phoneNumber;
     private String email;
 
-    public void logIn() {}
-    public void logOut() {}
-    public List<Doctor> ShowAllDoctors() {
-        List<Doctor> doctorsList = new ArrayList<>();
-        return doctorsList;
-    }
-    public void showDoctorSchedule() {}
-
 
 
 }
