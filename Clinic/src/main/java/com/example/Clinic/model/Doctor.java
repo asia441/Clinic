@@ -15,23 +15,43 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 public class Doctor extends User {
-//    private String name;
-//    private String surname;
-//    private String phoneNumber;
-//    private String email;
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Long doctorId;
     @ManyToMany
     @JoinTable(
             name = "PATIENT_DOCTOR",
             inverseJoinColumns = {@JoinColumn(name = "doctor_id")},
             joinColumns = {@JoinColumn(name = "patient_id")})
-    private Set<Patient> patientList;
+    private List<Patient> patientList;
     private String specialization;
-//
-//    @OneToMany
+
+    @Override
+    public void logIn() {
+        super.logIn();
+    }
+
+    @Override
+    public void logOut() {
+        super.logOut();
+    }
+
+    @Override
+    public List<Doctor> ShowAllDoctors() {
+        return super.ShowAllDoctors();
+    }
+
+    @Override
+    public void showDoctorSchedule() {
+        super.showDoctorSchedule();
+    }
+
+    public List<Office> showOffices() {
+        List<Office> officesList = new ArrayList<>();
+        return officesList;
+    }
+
+    public void showOwnSchedule(Doctor doctor) {}
+
+    //    @OneToMany
 //    private List<Visit> visitsList = new ArrayList<>();
 
 

@@ -1,27 +1,29 @@
-//package com.example.Clinic.model;
-//
-//import lombok.Data;
-//
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
-//import javax.persistence.ManyToOne;
-//import java.time.LocalDateTime;
-//
-//@Data
-//@Entity
-//
-//public class Visit {
-//
-//    @Id
-//    private Long visitId;
-//    private LocalDateTime visitDateAndTime;
-//    @ManyToOne
-//    private Doctor doctor;
-//    @ManyToOne
-//    private Patient patient;
-//    @ManyToOne
-//    private Office office;
-//
-//
-//
-//}
+package com.example.Clinic.model;
+
+import lombok.Data;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Data
+@Entity
+
+public class Visit {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long visitId;
+    private LocalDateTime visitDateAndTime;
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
+    @ManyToOne
+    @JoinColumn(name = "office_id")
+    private Office office;
+
+
+
+}

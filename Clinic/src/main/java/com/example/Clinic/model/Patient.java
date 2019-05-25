@@ -15,20 +15,13 @@ import java.util.Set;
 @NoArgsConstructor
 public class Patient extends User{
 
-//    private String name;
-//    private String surname;
-//    private String phoneNumber;
-//    private String email;
-//
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Long patientId;
+
     @ManyToMany
     @JoinTable(
             name = "PATIENT_DOCTOR",
             inverseJoinColumns = {@JoinColumn(name = "patient_id")},
             joinColumns = {@JoinColumn(name = "doctor_id")})
-    private Set <Doctor> doctorList;
+    private List <Doctor> doctorList;
     private String pesel;
 
     @OneToOne
@@ -37,4 +30,27 @@ public class Patient extends User{
 //    private List<Visit> visitsList = new ArrayList<>();
 
 
+    @Override
+    public void logIn() {
+        super.logIn();
+    }
+
+    @Override
+    public void logOut() {
+        super.logOut();
+    }
+
+    @Override
+    public List<Doctor> ShowAllDoctors() {
+        return super.ShowAllDoctors();
+    }
+
+    @Override
+    public void showDoctorSchedule() {
+        super.showDoctorSchedule();
+    }
+
+    public void SignIn() {}
+
+    public void setOwnVisit() {}
 }
