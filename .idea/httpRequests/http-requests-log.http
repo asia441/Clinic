@@ -1,0 +1,14 @@
+POST http://localhost:8081/doctors
+Content-Type: application/json
+
+{
+  "name": "Jan",
+  "surname": "Kowalski",
+  "phonenumber": "1902384930",
+  "email": "joanna@joanna.pl"
+}
+
+<> 2019-05-26T101120.200.json
+
+###
+
